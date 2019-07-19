@@ -1,3 +1,12 @@
 body {
     font-family: 'Literata', serif;
 }
+
+.full-height {
+    min-height: 100vh;
+}
+
+/* #mySection {
+    the "!important suffix lets CSS classes override bootstrap classes" 
+    padding: 200px 0!important;
+} */
