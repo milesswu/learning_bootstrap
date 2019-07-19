@@ -12,3 +12,24 @@ body {
     margin: 0 auto;
     /* background: blue!important; */
 }
+
+.height-80 {
+    min-height: 80vh;
+}
+
+.about-picture {
+    background-image: url(../img/about-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media screen and (min-width:768px) {
+    .about-picture {
+        background-size: contain;
+    }
+}
+
+.about-text {
+
+}
