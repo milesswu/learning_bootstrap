@@ -1,3 +1,7 @@
+/* html {
+    scroll-behavior: smooth;
+} */
+
 body {
     font-family: 'Literata', serif;
 }
@@ -40,4 +44,12 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
 }

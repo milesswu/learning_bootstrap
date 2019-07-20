@@ -24,6 +24,7 @@
 
 </head>
 <body>
+
 <!-- header section -->
     <header id="header" class="bg-dark">
         <div class="container">
@@ -44,6 +45,62 @@
     </header>
 <!-- end of header -->
 
+<!-- navbar -->
+<nav class="navbar py-3 navbar-light navbar-expand-md bg-light sticky-top">
+        <!-- logo -->
+        <a href="#" class="navbar-brand text-uppercase font-italic">First Bootstrap</a>
+
+        <!-- toggle navbar -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- contents of navbar -->
+        <div class="collapse navbar-collapse" id="navbarLinks">
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="#header" class="nav-link page-scroll">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#skills" class="nav-link page-scroll">Skills</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#about" class="nav-link page-scroll">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#projects" class="nav-link page-scroll">Projects</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#team" class="nav-link page-scroll">Team</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#carousel" class="nav-link page-scroll">France</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#practice" class="nav-link page-scroll">Filler</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#blog" class="nav-link page-scroll">Blog</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#contact" class="nav-link page-scroll">Contact Me</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#review" class="nav-link page-scroll">Review</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#progress" class="nav-link page-scroll">Progress</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#pricing" class="nav-link page-scroll">Pricing</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#footer" class="nav-link page-scroll">Links</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<!-- end of navbar -->
 
 <!-- skills section -->
 <section id="skills" class="py-5 bg-white">
@@ -898,5 +955,44 @@
   <script src="./js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="./js/bootstrap.bundle.min.js"></script>
+
+  <script>
+        /* var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.querySelector(".navbar").style.visibility = "visible";
+            } else {
+                document.querySelector(".navbar").style.visibility = "hidden";
+            }
+            prevScrollpos = currentScrollPos;
+        }     */
+
+        function main() {
+
+        (function () {   
+            $('a.page-scroll').click(function() {
+                console.log(this.pathname);
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    console.log(this, target);
+                if (target.length) {
+                    $('html,body').animate({
+                    scrollTop: target.offset().top - 40
+                    }, 900);
+                    return false;
+                }
+                }
+            });
+        $('.navbar-nav>li>a').on('click', function(){
+            $('.navbar-collapse').collapse('hide');
+        });
+        }());
+
+
+        }
+        main();
+    </script>
 </body>
 </html>
