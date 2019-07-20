@@ -34,7 +34,7 @@ body {
 
 }
 
-#practice {
+#practice, #progress {
     /* background-image: ; */
     background: linear-gradient(to bottom,rgba(0, 0, 0, .1), rgba(0, 0, 0, .6)), url(../img/filler.jpg);
     background-size: cover;
