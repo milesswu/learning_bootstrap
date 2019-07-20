@@ -972,23 +972,27 @@
 
         (function () {   
             $('a.page-scroll').click(function() {
-                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                //checks that path exists and that element is from the same domain as the site
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    // console.log('Hash', $(this));
                     var target = $(this.hash);
+
+                    //if couldnt find by hash, try to find by name
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                    console.log(this, target);
-                if (target.length) {
-                    $('html,body').animate({
-                    scrollTop: target.offset().top - document.querySelector('nav').offsetHeight
-                    }, 900);
-                    return false;
-                }
+                    // console.log(this, target);
+                    if (target.length) {
+                        $('html, body').animate({
+                        scrollTop: target.offset().top - document.querySelector('nav').offsetHeight
+                        }, 900);
+                        return false;
+                    }
                 }
             });
-            $('.navbar-nav>li>a').on('click', function(){
+            $('.navbar-nav>li>a, .navbar-brand').on('click', function(){
                 $('.navbar-collapse').collapse('hide');
             });
             $(function(){
-            $('nav').on('click', '.navbar-item', function(){
+            $('.navbar-item').on('click', '.navbar-item', function(){
                 $('.navbar-item').removeClass('active');
                 $(this).closest('.navbar-item').addClass('active');
             });

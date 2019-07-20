@@ -34,22 +34,10 @@ body {
     }
 }
 
-.about-text {
-
-}
-
 #practice, #progress {
     /* background-image: ; */
     background: linear-gradient(to bottom,rgba(0, 0, 0, .1), rgba(0, 0, 0, .6)), url(../img/filler.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-.affix {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
 }
