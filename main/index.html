@@ -46,7 +46,7 @@
 <!-- end of header -->
 
 <!-- navbar -->
-<nav class="navbar py-3 navbar-light navbar-expand-md bg-light sticky-top">
+<nav class="navbar py-3 navbar-light navbar-expand-lg bg-light sticky-top">
         <!-- logo -->
         <a href="#" class="navbar-brand text-uppercase font-italic">First Bootstrap</a>
 
@@ -972,14 +972,13 @@
 
         (function () {   
             $('a.page-scroll').click(function() {
-                console.log(this.pathname);
                     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
                     console.log(this, target);
                 if (target.length) {
                     $('html,body').animate({
-                    scrollTop: target.offset().top - 40
+                    scrollTop: target.offset().top - document.querySelector('nav').offsetHeight
                     }, 900);
                     return false;
                 }
